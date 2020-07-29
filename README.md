@@ -4,11 +4,11 @@ Tool for checking genotype concordance between multiple assays
 
 This tools was developed by Venkata "Teja" Yellapantulla as part of his PhD thesis work in the Keats Lab at Translational Genomics Research Institute.
 
-This tool is maintained by Salvatore Facista (TGen - Lab of Dr. William Hendricks) in 2019. The tool will now function with custom .ini files, generated with any number of SNPs. Please submit bug reports via Github.
+This tool is maintained by Salvatore Facista (TGen - Lab of Dr. William Hendricks) in 2020. The tool will now function with custom .ini files, generated with any number of SNPs. Please submit bug reports via Github.
 
 
 ## Usage
-- Move the configuration (.txt "reference" file, .ini "flat" file, and "geno" file) into the same directory as snpSniffer.jar. Some aspects of snpSniffer are underdeveloped and it will not appropriately handle paths. This will be added to the bugs list.
+- Move the configuration (.txt "reference" file, .ini "flat" file, and "geno" file) into the same directory as snpSniffer.jar. Some aspects of snpSniffer are underdeveloped and it will not appropriately handle paths. Please submit a bug report on Github if this causes you issues.
 
 - To generate a custom .ini file
 Use a text editor to format a blank file as below (or see included .ini files for examples). Ensure files have Unix style line endings (run dos2unix to convert DOS-style line endings to Unix style):
@@ -41,19 +41,19 @@ java -jar snpSniffer.jar -genotype <fullFilePath/reference> <fullFilePath/BAM>
 
 - To add genotypes from a vcf:
 
-`java -jar snpSnifferV5.jar -add <fullFilePath/VCF fileName> <fullFilePath/database.ini>`
+`java -jar snpSniffer.jar -add <fullFilePath/VCF fileName> <fullFilePath/database.ini>`
 
 - To view all samples:
 
-`java -jar snpSnifferV5.jar -check Samples <fullFilePath/database.ini>`
+`java -jar snpSniffer.jar -check Samples <fullFilePath/database.ini>`
 
 - To check concordance of genotypes for a sample:
 
-`java -jar snpSnifferV5.jar -check <sampleName> <fullFilePath/database.ini>`
+`java -jar snpSniffer.jar -check <sampleName> <fullFilePath/database.ini>`
 
 - For help:
 
-`java -jar snpSnifferV5.jar -help`
+`java -jar snpSniffer.jar -help`
 
 
 
@@ -71,7 +71,7 @@ java -jar snpSniffer.jar -genotype <fullFilePath/reference> <fullFilePath/BAM>
 4) Compare the genotypes for samples of interest(after 2 or more vcf's are added), examine the snpSniffer output and infer if any mixups occurred:
     `java -jar ~/local/bin/snpSniffer.jar -check sample1 /lustre/vyellapa/database.ini`
 
-Note: Users need to reference the correct directory when attempting to run snpSnifferV5.jar . Your version of snpSnifferV5.jar may reside in a different directory than the example above. 
+Note: Users need to reference the correct directory when attempting to run snpSniffer.jar . Your version of snpSniffer.jar may reside in a different directory than the example above. 
 
 ## Example output
 
@@ -103,8 +103,8 @@ Samtools (includes BCFtools - do not use outdated stand-alone BCFtools).
 
 1) Update the absolute paths for the VARIABLES in Run_SnpSniffer.sh
 ```
-	EMPTY_DATABASE=/data/tools/snpSniffer.v5/databaseV5.ini
-	SNP_SNIFFER_JAR=/data/tools/snpSniffer.v5/snpSnifferV5.jar
+	EMPTY_DATABASE=/data/tools/snpSniffer.v5/database.ini
+	SNP_SNIFFER_JAR=/data/tools/snpSniffer.v5/snpSniffer.jar
 	SnpSniffer_Graph_R=/data/jkeats/scripts/SnpSniffer_Graph.R
 ```
 
